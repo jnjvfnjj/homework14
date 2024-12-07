@@ -1,0 +1,152 @@
+/* Selectors and Specificity */
+.specific-class {
+    font-family: 'Arial', sans-serif;
+}
+
+ul li:nth-child(3n) {
+    color: red;
+}
+
+/* Box Model */
+.box {
+    padding: 20px;
+    margin: 15px;
+    background-color: lightblue;
+}
+
+.rounded-box {
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+/* Positioning */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* Flexbox */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.card {
+    flex: 1 1 calc(33.333% - 15px);
+    border: 1px solid black;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Grid */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 10px;
+}
+
+.sidebar {
+    background: lightblue;
+}
+
+.main {
+    background: lightcoral;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+/* Transitions and Animations */
+button {
+    background-color: blue;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100px);
+    }
+}
+
+.moving-element {
+    animation: move 2s infinite alternate;
+}
+
+/* Pseudo-elements */
+.decorative-heading::before {
+    content: '>> ';
+    color: red;
+}
+
+.decorative-heading::after {
+    content: ' <<';
+    color: red;
+}
+
+.styled-paragraph::first-letter {
+    font-size: 2em;
+    color: green;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .responsive-layout {
+        flex-direction: column;
+    }
+
+    .hidden {
+        display: none;
+    }
+}
+
+/* Custom Properties (CSS Variables) */
+:root {
+    --main-color: blue;
+    --font-family: 'Arial', sans-serif;
+    --bg-color: white;
+    --text-color: black;
+}
+
+body {
+    color: var(--main-color);
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+}
+
+.dark-theme {
+    --bg-color: black;
+    --text-color: white;
+}
